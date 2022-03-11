@@ -1,5 +1,6 @@
 <script>
-	const isOverlayOpen = false;
+	//const isOverlayOpen = false;
+	import { isOverlayOpen } from '../stores/overlayStore.js';
 </script>
 
 <section>
@@ -15,17 +16,20 @@
 	</h1>
 </section>
 <button
-	class="bg-purple-900 text-purple-100"
+	class="bg-purple-900 text-purple-100 p-4 rounded-md my-4"
 	on:click={() => {
-		isOverlayOpen = true;
+		{
+			isOverlayOpen.set(true);
+		}
 	}}>Open Overlay</button
->
-
+><!-- to access the value of a writable you have to use the dollar sign -->
+{$isOverlayOpen}
 <section>
 	<ul class="mt-20">
 		<li class="pt-4">Stores are a way to share state between different components</li>
 		<li class="pt-4">
-			We want isOpen to be usable in any component that we want to thru the use of a store
+			We want isOpen to be usable in any component and the state to be shared too that we want to
+			thru the use of a store
 		</li>
 		<li class="pt-4">Stopped at 5:32 mins in</li>
 		<li class="pt-4">https://youtu.be/ql_-tLTpPKg</li>
